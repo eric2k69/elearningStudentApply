@@ -129,6 +129,8 @@
 
 ![EventStormingV10](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/0-10-eventstorming.PNG)
 
+![EventStormingV10](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/0-11-eventstorming.PNG)
+
 
 ## 헥사고날 아키텍처 다이어그램 도출
 ![증빙1](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/1-hex_diagram.png)
