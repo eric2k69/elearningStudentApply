@@ -109,7 +109,7 @@
    
 ## Event Storming 결과
 
-![EventStormingV1](https://github.com/eric2k69/elearningStudentApply/Images/0-1-eventstorming.PNG)
+![EventStormingV1](https://github.com/eric2k69/elearningStudentApply/main/Images/0-1-eventstorming.PNG)
 
 ![EventStormingV2](https://github.com/eric2k69/elearningStudentApply/Images/0-2-eventstorming.PNG)
 
