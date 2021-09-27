@@ -109,23 +109,25 @@
    
 ## Event Storming 결과
 
-![EventStormingV1](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-1.JPG)
+![EventStormingV1](https://github.com/eric2k69/elearningStudentApply/Images/0-1-eventstorming.PNG)
 
-![EventStormingV2](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-2.JPG)
+![EventStormingV2](https://github.com/eric2k69/elearningStudentApply/Images/0-2-eventstorming.PNG)
 
-![EventStormingV3](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-3.JPG)
+![EventStormingV3](https://github.com/eric2k69/elearningStudentApply/Images/0-3-eventstorming.PNG)
 
-![EventStormingV4](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-4.JPG)
+![EventStormingV4](https://github.com/eric2k69/elearningStudentApply/Images/0-4-eventstorming.PNG)
 
-![EventStormingV5](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-5.JPG)
+![EventStormingV5](https://github.com/eric2k69/elearningStudentApply/Images/0-5-eventstorming.PNG)
 
-![EventStormingV6](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-6.JPG)
+![EventStormingV6](https://github.com/eric2k69/elearningStudentApply/Images/0-6-eventstorming.PNG)
 
-![EventStormingV7](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-7.JPG)
+![EventStormingV7](https://github.com/eric2k69/elearningStudentApply/Images/0-7-eventstorming.PNG)
 
-![EventStormingV8](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-8.JPG)
+![EventStormingV8](https://github.com/eric2k69/elearningStudentApply/Images/0-8-eventstorming.PNG)
 
-![EventStormingV9](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/event/event-9.JPG)
+![EventStormingV9](https://github.com/eric2k69/elearningStudentApply/Images/0-9-eventstorming.PNG)
+
+![EventStormingV10](https://github.com/eric2k69/elearningStudentApply/Images/0-10-eventstorming.PNG)
 
 
 ## 헥사고날 아키텍처 다이어그램 도출
