@@ -261,12 +261,6 @@ spec:
     app: gateway
 ```
 
-**AKS 클럿터 접속 및 ACR 연결**
-
-- Azure 로그인 : az login
-- AKS 접속 : az aks get-credentials --resource-group user0505-rsrcgrp --name user0505-aks
-- ACR 로그인 : az acr login --name user0505
-- 클러스터와 ACR 연결 : az aks update -n user0505-aks -g user0505-rsrcgrp --attach-acr user0505
 
 
 **Gateway External IP**
