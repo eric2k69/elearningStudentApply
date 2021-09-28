@@ -136,29 +136,29 @@
 ![증빙1](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/1-hex_diagram.png)
 
 # 구현
-- 분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각각의 포트넘버는 8081 ~ 8085, gateway는 8088 이다)
+- 분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각각의 포트넘버는 8081 ~ 8085, 8088 이다)
 ```
 cd Apply
-mvn spring-boot:run  
+mvn spring-boot:run
 
 cd Pay
 mvn spring-boot:run
 
 cd Delivery
-mvn spring-boot:run 
+mvn spring-boot:run
 
 cd MyPage
-mvn spring-boot:run  
+mvn spring-boot:run
 
 cd Stock
 mvn spring-boot:run
 
 cd gateway
-mvn spring-boot:run 
+mvn spring-boot:run
 ```
 
 ## GateWay 적용
-- API GateWay를 통하여 마이크로 서비스들의 집입점을 통일할 수 있다. 다음과 같이 GateWay를 적용하였다.
+- API GateWay를 통하여 마이크로 서비스들의 진입점을 통일할 수 있다. 다음과 같이 GateWay를 적용하였다.
 
 ```yaml
 server:
@@ -186,6 +186,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path= /myPages/**
+        - id: Stock
+          uri: http://localhost:8085
+          predicates:
+            - Path= /stocks/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -221,6 +225,10 @@ spring:
           uri: http://MyPage:8080
           predicates:
             - Path= /myPages/**
+        - id: Stock
+          uri: http://Stock:8080
+          predicates:
+            - Path= /stocks/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -253,9 +261,18 @@ spec:
     app: gateway
 ```
 
+**AKS 클럿터 접속 및 ACR 연결**
+
+- Azure 로그인 : az login
+- AKS 접속 : az aks get-credentials --resource-group user0505-rsrcgrp --name user0505-aks
+- ACR 로그인 : az acr login --name user0505
+- 클러스터와 ACR 연결 : az aks update -n user0505-aks -g user0505-rsrcgrp --attach-acr user0505
+
+
 **Gateway External IP**
 
-![증빙1](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/3-gateway.png)
+![증빙1](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/3-gateway-externalIP.png)
+
 
 
 ## DDD 의 적용
