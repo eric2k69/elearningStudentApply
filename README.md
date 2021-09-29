@@ -667,10 +667,6 @@ kubectl -n kafka exec -ti my-kafka-0 -- /usr/bin/kafka-console-producer --broker
 kubectl -n kafka exec -ti my-kafka-0 -- /usr/bin/kafka-console-consumer --bootstrap-server my-kafka:9092 --topic store --from-beginning
 ```
 
-* 소스 가져오기
-```
-git clone https://github.com/eric2k69/elearningStudentApply.git
-```
 
 ## ConfigMap
 * Apply 서비스 deployment.yml 파일에 설정
