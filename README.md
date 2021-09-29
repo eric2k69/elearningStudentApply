@@ -506,7 +506,7 @@ public interface DeliveryService {
 
 **잠시 배송 서비스(Delivery) 중지**
 
-![증빙7](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-1-delivery_stop.png)
+![증빙7](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-1-delivery_stop.png)
 
 **신청 취소 요청시 결제 서비스(Pay) 변화 없음**
 
@@ -514,17 +514,17 @@ public interface DeliveryService {
 http PUT http://20.196.242.11:8080/pay/1 studentId="student1" studentName="홍길동" qty=10 amount=1000 applyStatus="cancelled" address="seoul" bookId="001" bookName="book001"
 ```
 
-![증빙8](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-2-1-cancel.png)
+![증빙8](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-2-1-cancel.png)
 
-![증빙8](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-2-2-cancel.png)
+![증빙8](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-2-2-cancel.png)
 
 **배송 서비스(Delivery) 기동 후 신청취소**
 
-![증빙9](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-3-delete.png)
+![증빙9](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-3-delete.png)
 
 **결제 서비스(Pay) 상태를 보면 신청 정상 취소 처리**
 
-![증빙9](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-4-paycancelled.png)
+![증빙9](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-4-paycancelled.png)
 
 **Fallback 설정**
 ```java
@@ -560,7 +560,7 @@ public class PayServiceImpl implements PayService {
 
 **Fallback 결과(Apply데이터 추가 시)**
 
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-5-fallback.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-5-fallback.png)
 
 ## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
 - 결제가 이루어진 후에 배송 서비스로 이를 알려주는 행위는 동기식이 아니라 비동기식으로 처리하여 배송를 위하여 결제가 블로킹 되지 않도록 처리한다.
@@ -608,17 +608,17 @@ public class PolicyHandler{
 ```
 
 **Apply 신청**
-![9](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-6-async-1.png)
+![9](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-6-async-1.png)
 
 **Kafka Publish 정보**
-![10](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-7-async-2.png)
+![10](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-7-async-2.png)
 
 ```
 # 배송 서비스 기동
 ```
 
 **배송 서비스(Delivery) Subscribe 정보**
-![11](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/6-8-async-3.png)
+![11](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-8-async-3.png)
 
 
 
@@ -671,7 +671,7 @@ kubectl -n kafka exec -ti my-kafka-0 -- /usr/bin/kafka-console-consumer --bootst
 
 * 소스 가져오기
 ```
-git clone https://github.com/jinmojeon/elearningStudentApply.git
+git clone https://github.com/eric2k69/elearningStudentApply.git
 ```
 
 ## ConfigMap
@@ -690,7 +690,7 @@ env:
 kubectl create configmap servicetype --from-literal=svctype=PRODUCT -n default -n default
 kubectl get configmap servicetype -o yaml
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/7-1-configmap.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-1-configmap.png)
 
 
 **Apply 마이크로 서비스의 Apply.java**
@@ -713,7 +713,7 @@ public class Apply {
 ```
 kubectl logs -f {pod ID}
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/7-2-configmap-print.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-2-configmap-print.png)
 
 
 ## Deploy / Pipeline
@@ -776,7 +776,7 @@ kubectl apply -f kubernetes/service.yaml
 ```
 
 * Service, Pod, Deploy 상태 확인
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/7-3-getall.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-3-getall.png)
 
 
 * deployment.yml  참고
@@ -895,9 +895,9 @@ kubectl exec -it pod/siege -c siege -- /bin/bash
 siege -c100 -t60S  -v --content-type "application/json" 'http://{EXTERNAL-IP}:8080/applies POST {"studentId":"test123", "bookId":"bok123", "qty": "11", "amount":"2000"}'
 siege –c100 –t60S  -v --content-type "application/json" 'http://20.196.242.11:8080/applies POST {"studentId":"test123", "bookId":"bok123", "qty": "11", "amount":"2000"}'
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/7-4-siege.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-4-siege.png)
 
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/7-5-1-siege-result.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-5-1-siege-result.png)
 
 
 
@@ -956,11 +956,11 @@ siege –c100 –t60S  -v --content-type "application/json" 'http://20.196.242.1
 ```
 kubectl get deploy apply -w
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/8-1-autoscale-w.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/8-1-autoscale-w.png)
 ```
 kubectl get pod
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/8-2-autoscale-pod.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/8-2-autoscale-pod.png)
 
 
 
@@ -1031,7 +1031,7 @@ kubectl apply -f kubernetes/deployment.yml
 
 - 동일한 시나리오로 재배포 한 후 Availability 확인:
 
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/9-2-readiness-seige.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/9-2-readiness-seige.png)
 
 배포기간 동안 Availability 가 변화없기 때문에 무정지 재배포가 성공한 것으로 확인됨.
 
@@ -1052,10 +1052,10 @@ kubectl apply -f kubernetes/deployment.yml
 ```
 kubectl describe deploy delivery
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/10-1-liveness-port.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/10-1-liveness-port.png)
 
 - Pod 재시작 확인
 ```
 kubectl get pod -w
 ```
-![image](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/10-2-liveness-pod.png)
+![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/10-2-liveness-pod.png)
