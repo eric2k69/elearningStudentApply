@@ -442,7 +442,7 @@ MyPage와 Stock의 CQRS 결과는 아래와 같다
 
 Correlation을 Key를 활용하기 위해 Id를 Key값으로 사용하였으며 신청된 교재를 동일한 Id로 취소한다.
 
-신청 취소가 되면 ApplyStatus가 cancelled로 Update 되는 것을 볼 수 있다.
+신청 취소가 되면 ApplyStatus가 cancelled로 Update 되고 stockQty가 100으로 증가하는 것을 볼 수 있다.
 
 **Apply서비스 교재 신청 취소**
 ```
