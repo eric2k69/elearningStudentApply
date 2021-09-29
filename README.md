@@ -415,9 +415,9 @@ http http://20.196.242.11:8080/deliveries
 http http://20.196.242.11:8080/myPages
 ```
 
-![증빙2](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-1.png)
+![증빙2](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-1.png)
 
-![증빙3](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-2.png)
+![증빙3](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-2.png)
 
 
 ## CQRS/Saga/Correlation-key
@@ -435,7 +435,7 @@ MyPage와 Stock의 CQRS 결과는 아래와 같다
 
 **Apply 실행 후 MyPages & Stock**
 
-![증빙4](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/4-0-apply.png)
+![증빙4](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/4-0-apply.png)
 
 - Correlation-key 
 
