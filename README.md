@@ -618,9 +618,6 @@ public class PolicyHandler{
 # 배송 서비스 기동
 ```
 
-**배송 서비스(Delivery) Subscribe 정보**
-![11](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-8-async-3.png)
-
 
 
 # 운영
