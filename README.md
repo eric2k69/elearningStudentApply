@@ -901,7 +901,6 @@ siege –c100 –t60S  -v --content-type "application/json" 'http://20.196.242.1
 ```
 ![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-4-siege.png)
 
-![image](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/7-5-1-siege-result.png)
 
 
 
