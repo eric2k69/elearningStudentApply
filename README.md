@@ -437,6 +437,7 @@ MyPage와 Stock의 CQRS 결과는 아래와 같다
 
 ![증빙4](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-2.png)
 
+
 - Correlation-key 
 
 Correlation을 Key를 활용하기 위해 Id를 Key값으로 사용하였으며 신청된 교재를 동일한 Id로 취소한다.
