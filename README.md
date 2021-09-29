@@ -732,6 +732,10 @@ cd MyPage
 mvn package
 
 cd ..
+cd Stock
+mvn package
+
+cd ..
 cd gateway
 mvn package
 ```
@@ -740,31 +744,37 @@ mvn package
 ```
 cd .. 
 cd Apply
-az acr build --registry grp01 --image grp01.azurecr.io/apply:v1 .
+az acr build --registry user0505 --image user0505.azurecr.io/apply:v5 .
 kubectl apply -f kubernetes/deployment.yml 
 kubectl apply -f kubernetes/service.yaml 
 
 cd .. 
 cd Pay
-az acr build --registry grp01 --image grp01.azurecr.io/pay:v1 .
+az acr build --registry user0505 --image user0505.azurecr.io/pay:v5 .
 kubectl apply -f kubernetes/deployment.yml 
 kubectl apply -f kubernetes/service.yaml 
 
 cd .. 
 cd Delivery
-az acr build --registry grp01 --image grp01.azurecr.io/delivery:v1 .
+az acr build --registry user0505 --image user0505.azurecr.io/delivery:v5 .
 kubectl apply -f kubernetes/deployment.yml 
 kubectl apply -f kubernetes/service.yaml 
 
 cd .. 
 cd MyPage
-az acr build --registry grp01 --image grp01.azurecr.io/mypage:v1 .
+az acr build --registry user0505 --image user0505.azurecr.io/mypage:v5 .
+kubectl apply -f kubernetes/deployment.yml 
+kubectl apply -f kubernetes/service.yaml 
+
+cd .. 
+cd Stock
+az acr build --registry user0505 --image user0505.azurecr.io/mypage:v5 .
 kubectl apply -f kubernetes/deployment.yml 
 kubectl apply -f kubernetes/service.yaml 
 
 cd .. 
 cd gateway
-az acr build --registry grp01 --image grp01.azurecr.io/gateway:v1 .
+az acr build --registry user0505 --image user0505.azurecr.io/gateway:v5 .
 kubectl apply -f kubernetes/deployment.yml 
 kubectl apply -f kubernetes/service.yaml 
 ```
