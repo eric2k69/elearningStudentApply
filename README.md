@@ -518,6 +518,7 @@ http PUT localhost:8088/pay/5 studentId="student1" studentName="홍길동" qty=1
 
 **배송 서비스(Delivery) 기동 후 신청취소**
 
+
 ![증빙9](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-3-delete.png)
 
 **결제 서비스(Pay) 상태를 보면 신청 정상 취소 처리**
