@@ -525,6 +525,7 @@ http PUT localhost:8088/pay/5 studentId="student1" studentName="홍길동" qty=1
 ![증빙9](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/6-4-paycancelled.png)
 
 **Fallback 설정**
+PayService.java
 ```java
 package store.external;
 
@@ -540,6 +541,7 @@ public interface PayService {
 }
 
 ```
+PayServiceImpl.java
 ```java
 package store.external;
 
