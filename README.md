@@ -400,12 +400,12 @@ public interface ApplyRepository extends PagingAndSortingRepository<Apply, Long>
 
 - DDD 적용 후 REST API의 테스트를 통하여 정상적으로 동작하는 것을 확인할 수 있었다.
 
-**Apply서비스 교재 신청**
+**Gateway를 통한 Apply서비스 교재 신청**
 ```
-http POST http://20.196.242.11:8080/applies studentId="student1" studentName="홍길동" qty=10 amount=1000 applyStatus="completed" address="seoul" bookId="001" bookName="book001"
+http POST localhost:8088/applies studentId="student1" studentName="홍길동" qty=10 amount=1000 applyStatus="completed" address="seoul" bookId="001" bookName="book001"
 ```
 
-![증빙1](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/2-1-ddd-reg.png)
+![증빙1](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-1-ddd-reg-apply.png)
 
 **Apply/Pag/Delivery/MyPage서비스 신청정보 조회**
 ```
@@ -421,19 +421,19 @@ http http://20.196.242.11:8080/myPages
 
 
 ## CQRS/Saga/Correlation-key
-- CQRS : Materialized View를 구현하여, 타 마이크로서비스의 데이터 원본에 접근없이(Composite 서비스나 조인SQL 등 없이)도 내 서비스의 화면 구성과 잦은 조회가 가능하게 구현해 두었다. 본 프로젝트에서 View 역할은 MyPages 서비스가 수행한다.
+- CQRS : Materialized View를 구현하여, 타 마이크로서비스의 데이터 원본에 접근없이(Composite 서비스나 조인SQL 등 없이)도 내 서비스의 화면 구성과 잦은 조회가 가능하게 구현해 두었다. 본 프로젝트에서 View 역할은 MyPages와 Stock 서비스가 수행한다.
 
-신청 / 결제 / 배송 서비스의 전체 현황 및 상태 조회를 제공하기 위해 MyPage를 구성하였다.
+신청 / 결제 / 배송 서비스의 전체 현황 및 상태 조회를 제공하기 위해 MyPage를 구성하였고, 관리자의 재고 상태 파악을 위하여 Stock을 구성하였다.
 
 신규 교재 신청 정보를 등록한다.
 
 **Apply 등록**
 
-![증빙3](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/2-1-ddd-reg.png)
+![증빙3](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-1-ddd-reg-apply.png)
 
-MyPage CQRS 결과는 아래와 같다
+MyPage와 Stock의 CQRS 결과는 아래와 같다
 
-**Apply 실행 후 MyPages**
+**Apply 실행 후 MyPages & Stock**
 
 ![증빙4](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/4-0-apply.png)
 
