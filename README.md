@@ -409,10 +409,11 @@ http POST localhost:8088/applies studentId="student1" studentName="홍길동" qt
 
 **Apply/Pag/Delivery/MyPage서비스 신청정보 조회**
 ```
-http http://20.196.242.11:8080/applies
-http http://20.196.242.11:8080/pays
-http http://20.196.242.11:8080/deliveries
-http http://20.196.242.11:8080/myPages
+http localhost:8081/applies
+http localhost:8082/pays
+http localhost:8083/deliveries
+http localhost:8084/myPages
+http localhost:8085/stocks
 ```
 
 ![증빙2](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/2-2-ddd-retrieve-1.png)
@@ -423,7 +424,7 @@ http http://20.196.242.11:8080/myPages
 ## CQRS/Saga/Correlation-key
 - CQRS : Materialized View를 구현하여, 타 마이크로서비스의 데이터 원본에 접근없이(Composite 서비스나 조인SQL 등 없이)도 내 서비스의 화면 구성과 잦은 조회가 가능하게 구현해 두었다. 본 프로젝트에서 View 역할은 MyPages와 Stock 서비스가 수행한다.
 
-신청 / 결제 / 배송 서비스의 전체 현황 및 상태 조회를 제공하기 위해 MyPage를 구성하였고, 관리자의 재고 상태 파악을 위하여 Stock을 구성하였다.
+신청 / 결제 / 배송 서비스의 전체 현황 및 상태 조회를 제공하기 위해 MyPage를 구성하였고, 관리자가 재고 상태를 확인할 수 있도록 Stock을 구성하였다.
 
 신규 교재 신청 정보를 등록한다.
 
@@ -459,7 +460,7 @@ http PUT localhost:8088/applies/5 studentId="student1" studentName="홍길동" q
 위 결과로 서로 다른 마이크로 서비스 간에 ID값으로 상호 연결되어 있음을 알 수 있다.
 
 ## 폴리글랏 퍼시스턴스
-- Apply 서비스의 DB와 MyPage의 DB를 다른 DB를 사용하여 폴리글랏 퍼시스턴스를 만족시키고 있다.(인메모리 DB인 hsqldb 사용)
+- Apply 서비스와 MyPage/Stock의 DB를 다른 DB로 사용하여 폴리글랏 퍼시스턴스를 만족시키고 있다.(h2 database와 hsqldb 사용)
 
 **Apply의 pom.xml DB 설정 코드**
 
