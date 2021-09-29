@@ -464,15 +464,15 @@ http PUT localhost:8088/applies/5 studentId="student1" studentName="홍길동" q
 
 **Apply의 pom.xml DB 설정 코드**
 
-![증빙5](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/5-1-h2.png)
+![증빙5](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/5-1-h2.png)
 
 **MyPage의 pom.xml DB 설정 코드**
 
-![증빙6](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/5-2-hsql.png)
+![증빙6](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/5-2-hsql.png)
 
-**MyPage의 hsqldb 적용 서버 로그**
+**Stock의 pom.xml DB 설정 코드**
 
-![증빙6](https://github.com/jinmojeon/elearningStudentApply/blob/main/Images/5-3-hsql-log.png)
+![증빙6](https://github.com/eric2k69/elearningStudentApply/blob/main/Images/5-3-hsql.png)
 
 ## 동기식 호출 과 Fallback 처리
 
